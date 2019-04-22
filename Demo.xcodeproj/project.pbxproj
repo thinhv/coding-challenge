@@ -171,8 +171,7 @@
 		25B0C75F226B40A1005AB6C0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				8C2D08E5226DB59A0054BEB8 /* APIRequest.swift */,
-				8C2D08E7226DB77B0054BEB8 /* APIRequestLoader.swift */,
+				8C2D08F0226DFA1B0054BEB8 /* Core */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -183,6 +182,15 @@
 				8C2D08EA226DBC0A0054BEB8 /* Item.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8C2D08F0226DFA1B0054BEB8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8C2D08E5226DB59A0054BEB8 /* APIRequest.swift */,
+				8C2D08E7226DB77B0054BEB8 /* APIRequestLoader.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
