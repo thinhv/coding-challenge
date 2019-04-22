@@ -10,15 +10,20 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
 
+    struct Dimensions {
+        static let itemSpacing: CGFloat = 8.0
+        static let inset: CGFloat = 8.0
+    }
+
     private lazy var dataSource: ProductsListDataSource = ProductsListDataSource()
 
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        let itemWidth: CGFloat = (CGFloat.screenWidth - 8.0 * 3) / 2
+        let itemWidth: CGFloat = (CGFloat.screenWidth - Dimensions.itemSpacing * 3) / 2
         layout.itemSize = CGSize(width: itemWidth, height: 1.5 * itemWidth)
-        layout.minimumLineSpacing = 8.0
-        layout.minimumInteritemSpacing = 8.0
-        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0)
+        layout.minimumLineSpacing = Dimensions.itemSpacing
+        layout.minimumInteritemSpacing = Dimensions.itemSpacing
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: Dimensions.inset, bottom: 0.0, right: Dimensions.inset)
         return layout
     }()
 
@@ -37,8 +42,6 @@ class ProductsListViewController: UIViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
-        collectionView.backgroundColor = .red
 
         dataSource.collectionView = collectionView
     }

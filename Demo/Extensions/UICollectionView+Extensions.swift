@@ -1,5 +1,5 @@
 //
-//  UICollectionView.swift
+//  UICollectionView+Extensions.swift
 //  Demo
 //
 //  Created by Thinh Vo on 4/19/19.
