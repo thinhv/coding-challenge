@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum RequestError: Error {
+    case invalidURL
+}
+
 protocol APIRequestProtocol {
     associatedtype ResquestDataType
     associatedtype ResponseDataType
