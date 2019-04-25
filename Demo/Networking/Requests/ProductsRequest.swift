@@ -14,7 +14,7 @@ struct ProductsRequest: APIRequestProtocol {
 
     typealias ResponseDataType = ItemsResponse
 
-    private let endpoint: String = "catelog"
+    private let endpoint: String = "catalog"
 
     let configuration: APIConfiguration
 
