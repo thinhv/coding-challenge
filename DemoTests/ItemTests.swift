@@ -9,6 +9,7 @@
 import XCTest
 @testable import Demo
 
+// swiftlint:disable force_try
 class ItemTests: XCTestCase {
 
     override func setUp() {}

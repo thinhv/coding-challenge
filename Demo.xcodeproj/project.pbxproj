@@ -209,7 +209,6 @@
 				B5C7B8E9C8EBA4E667A6A6F2 /* Pods-DemoTests.debug.xcconfig */,
 				2A7BF30DDD210AB6FFF9D75B /* Pods-DemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -261,6 +260,7 @@
 				255B46292269C9F900F58E4A /* Frameworks */,
 				255B462A2269C9F900F58E4A /* Resources */,
 				5FC24EE3102AC6ACE2FCDA14 /* [CP] Embed Pods Frameworks */,
+				8CBFE03522755B54009E21A2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -370,6 +370,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8CBFE03522755B54009E21A2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		8F38D4B00790EFF4B3FA78F5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -601,6 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-DRD";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thinhvo.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -620,6 +638,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-DER";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thinhvo.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

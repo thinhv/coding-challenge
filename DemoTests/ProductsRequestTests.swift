@@ -9,6 +9,7 @@
 import XCTest
 @testable import Demo
 
+// swiftlint:disable force_try
 class APIRequestTests: XCTestCase {
 
     private let baseURL: String = "https://demo.com"

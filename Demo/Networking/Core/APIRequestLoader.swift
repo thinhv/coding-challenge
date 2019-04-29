@@ -18,7 +18,9 @@ class APIRequestLoader<T: APIRequestProtocol> {
         self.session = session
     }
 
-    func loadRequest(requestData: T.ResquestDataType?, completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void) {
+    func loadRequest(requestData: T.ResquestDataType?,
+                     completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void) {
+
         do {
             let urlRequest = try request.createRequest(requestData)
             let dataTask = session.dataTask(with: urlRequest) { (data, urlResponse, error) in

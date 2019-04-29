@@ -13,7 +13,9 @@ struct ItemPrice: Codable {
     let currency: String
 }
 
+// swiftlint:disable identifier_name
 struct Item: Codable {
+
     let id: String
     let title: String
     let imageURL: URL?
