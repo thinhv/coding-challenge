@@ -16,7 +16,7 @@ extension ReusableView where Self: UIView {
     }
 }
 
-extension UICollectionViewCell: ReusableView {}
+extension UICollectionReusableView: ReusableView {}
 
 extension UICollectionView {
     func registerClass<T: UICollectionViewCell>(_ : T.Type) {
@@ -34,5 +34,26 @@ extension UICollectionView {
         }
 
         return cell
+    }
+
+    func register<T: UICollectionReusableView>(viewClass: T.Type, forSupplementaryViewOfKind kind: String) {
+        register(viewClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: T.reusableIdentifier)
+    }
+
+    func registerNib<T: UICollectionReusableView>(viewClass: T.Type, forSupplementaryViewOfKind kind: String) {
+        let nibName = String(describing: T.self)
+        register(UINib(nibName: nibName, bundle: nil),
+                 forSupplementaryViewOfKind: kind,
+                 withReuseIdentifier: T.reusableIdentifier)
+    }
+
+    func dequeueReusableSupplementaryView<T: UICollectionReusableView>(
+        _ : T.Type,
+        ofKind kind: String,
+        indexPath: IndexPath) -> UICollectionReusableView {
+
+        return dequeueReusableSupplementaryView(ofKind: kind,
+                                                withReuseIdentifier: T.reusableIdentifier,
+                                                for: indexPath)
     }
 }

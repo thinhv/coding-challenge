@@ -22,6 +22,8 @@ struct Item: Codable {
     let price: ItemPrice
     let category: String
 
+    var liked: Bool = false // Fake like functionality
+
     enum CodingKeys: String, CodingKey {
         case id = "item_id"
         case title = "title"
