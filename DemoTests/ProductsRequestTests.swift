@@ -28,7 +28,7 @@ class APIRequestTests: XCTestCase {
         let urlRequest = try! request.createRequest(nil)
 
         XCTAssertNotNil(urlRequest.url)
-        XCTAssertEqual(urlRequest.url!.absoluteString, "https://demo.com/catelog")
+        XCTAssertEqual(urlRequest.url!.absoluteString, "https://demo.com/catalog")
     }
 
     func testCreateRequestWithURLString() {
