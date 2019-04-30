@@ -7,14 +7,14 @@
 
 ## Features
 - [x] Follow SOLID Pricinples   
-[x] MVC Pattern  
-[x] Lightweight view controller  
-[x] Testable code(networking, datas source, etc)  
+- [x] MVC Pattern  
+- [x] Lightweight view controller  
+- [x] Testable code(networking, datas source, etc)  
   
 ## What have not been implemented
-[ ] Unit testing for view controller 
-[ ] View model for the collection view cell and its tests  
-[ ] UI Testing  
+- [ ] Unit testing for view controller 
+- [ ] View model for the collection view cell and its tests  
+- [ ] UI Testing  
 
 ## Other approach
 MVVM Architectual Pattern has many advantages over MVC.
