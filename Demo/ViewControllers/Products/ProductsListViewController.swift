@@ -12,7 +12,11 @@ class ProductsListViewController: UIViewController {
 
     lazy var loader: APIRequestLoader<ProductsRequest> = APIRequestLoader(request: ProductsRequest())
 
-    lazy var dataSource: ProductsListDataSource = ProductsListDataSource(loader: loader)
+    lazy var dataSource: ProductsListDataSource = {
+        let dataSource = ProductsListDataSource(loader: loader)
+        dataSource.delegate = self
+        return dataSource
+    }()
 
     private lazy var loadingIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .gray)
@@ -94,5 +98,13 @@ class ProductsListViewController: UIViewController {
         dataSource.collectionView = collectionView
         refreshControl.addTarget(self, action: #selector(refreshContent(_:)), for: .valueChanged)
     }
+}
 
+// MARK: ProductsListDataSource methods
+extension ProductsListViewController: ProductsListDataSourceDelegate {
+    func productsListDataSource(_ dataSource: ProductsListDataSource, didSelectItemAtIndexPath indexPath: IndexPath) {
+        #if DEBUG
+        print("Did select item at indexPath: \(indexPath)")
+        #endif
+    }
 }
