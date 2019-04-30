@@ -6,7 +6,7 @@
 * Xcode 10.2.1
 
 ## Features
-[x] Follow SOLID Pricinples   
+- [x] Follow SOLID Pricinples   
 [x] MVC Pattern  
 [x] Lightweight view controller  
 [x] Testable code(networking, datas source, etc)  
